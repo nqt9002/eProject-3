@@ -1,4 +1,4 @@
-﻿@model IEnumerable<eProject3_Jamesthew.Models.payment>
+﻿@model IEnumerable<eProject3_Jamesthew.Models.package>
 
 @{
     ViewBag.Title = "Index";
@@ -16,22 +16,22 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.package.title)
-        </th>
-        <th>
             @Html.DisplayNameFor(model => model.user.username)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.title)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.card_number)
+            @Html.DisplayNameFor(model => model.body)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.card_expirydate)
+            @Html.DisplayNameFor(model => model.price)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.csc)
+            @Html.DisplayNameFor(model => model.expirydate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.is_public)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.created_at)
@@ -43,22 +43,22 @@
     {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.package.title)
-            </td>
-            <td>
                 @Html.DisplayFor(modelItem => item.user.username)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.title)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.card_number)
+                @Html.DisplayFor(modelItem => item.body)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.card_expirydate)
+                @Html.DisplayFor(modelItem => item.price)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.csc)
+                @Html.DisplayFor(modelItem => item.expirydate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.is_public)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.created_at)

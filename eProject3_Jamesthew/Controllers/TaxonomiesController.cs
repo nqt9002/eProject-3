@@ -15,10 +15,11 @@ namespace eProject3_Jamesthew.Controllers
         private Jamesthew_Model db = new Jamesthew_Model();
 
         // GET: Taxonomies
-        public ActionResult Index()
+        public ActionResult Index(string content_type)
         {
+            ViewBag._index_content_type = content_type;
             var taxonomies = db.taxonomies.Include(t => t.user);
-            return View(taxonomies.ToList());
+            return View(taxonomies.ToList().Where(c => c.content_type == content_type));
         }
 
         // GET: Taxonomies/Details/5
@@ -37,8 +38,9 @@ namespace eProject3_Jamesthew.Controllers
         }
 
         // GET: Taxonomies/Create
-        public ActionResult Create()
+        public ActionResult Create(string content_type)
         {
+            ViewBag._content_type = content_type;
             ViewBag.created_by = new SelectList(db.users, "id", "username");
             return View();
         }
@@ -48,13 +50,14 @@ namespace eProject3_Jamesthew.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "id,title,body,excerpt,content_type,created_by,created_at")] taxonomy taxonomy)
+        public ActionResult Create([Bind(Include = "id,title,body,excerpt,content_type,created_by,created_at")] taxonomy taxonomy, string content_type)
         {
             if (ModelState.IsValid)
             {
+                ViewBag._content_type = content_type;
                 db.taxonomies.Add(taxonomy);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Index", new { content_type });
             }
 
             ViewBag.created_by = new SelectList(db.users, "id", "username", taxonomy.created_by);
@@ -82,13 +85,14 @@ namespace eProject3_Jamesthew.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "id,title,body,excerpt,content_type,created_by,created_at")] taxonomy taxonomy)
+        public ActionResult Edit([Bind(Include = "id,title,body,excerpt,content_type,created_by,created_at")] taxonomy taxonomy, string content_type)
         {
+            ViewBag._content_type = content_type;
             if (ModelState.IsValid)
             {
                 db.Entry(taxonomy).State = EntityState.Modified;
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Index", new { content_type });
             }
             ViewBag.created_by = new SelectList(db.users, "id", "username", taxonomy.created_by);
             return View(taxonomy);
@@ -112,12 +116,13 @@ namespace eProject3_Jamesthew.Controllers
         // POST: Taxonomies/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(int id)
+        public ActionResult DeleteConfirmed(int id, string content_type)
         {
+            ViewBag._content_type = content_type;
             taxonomy taxonomy = db.taxonomies.Find(id);
             db.taxonomies.Remove(taxonomy);
             db.SaveChanges();
-            return RedirectToAction("Index");
+            return RedirectToAction("Index", new { content_type });
         }
 
         protected override void Dispose(bool disposing)

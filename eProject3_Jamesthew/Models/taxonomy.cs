@@ -14,6 +14,7 @@ namespace eProject3_Jamesthew.Models
         {
             taxonomy_m2m = new HashSet<taxonomy_m2m>();
             taxonomy_meta = new HashSet<taxonomy_meta>();
+            articles = new HashSet<article>();
         }
 
         public int id { get; set; }
@@ -43,5 +44,6 @@ namespace eProject3_Jamesthew.Models
         public virtual ICollection<taxonomy_meta> taxonomy_meta { get; set; }
 
         public virtual user user { get; set; }
+        public virtual ICollection<article> articles { get; set; }
     }
 }

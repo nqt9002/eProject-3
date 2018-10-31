@@ -18,7 +18,7 @@
             <div class="col-md-3 left_col">
                 <div class="left_col scroll-view">
                     <div class="navbar nav_title" style="border: 0;">
-                        <a href="@Url.Action("Index","Home")" class="site_title"><i class="fa fa-paw"></i> <span>JamesThew.Com</span></a>
+                        <a href="@Url.Action("index","Home")" class="site_title"><i class="fa fa-paw"></i> <span>JamesThew.Com</span></a>
                     </div>
                     <div class="clearfix"></div>
                     <!-- menu profile quick info -->
@@ -48,70 +48,72 @@
                                 <li>
                                     <a><i class="fa fa-edit"></i> Users <span class="fa fa-chevron-down"></span></a>
                                     <ul class="nav child_menu">
-                                        <li>@Html.ActionLink("Add new", "Create", "User")</li>
-                                        <li>@Html.ActionLink("All users", "Index", "User")</li>
+                                        <li>@Html.ActionLink("Add new users", "create", "user")</li>
+                                        <li>@Html.ActionLink("All users", "index", "user")</li>
                                     </ul>
                                 </li>
                                 <li>
                                     <a><i class="fa fa-table"></i> Payment <span class="fa fa-chevron-down"></span></a>
                                     <ul class="nav child_menu">
-                                        <li><a href="tables.html">All Payment</a></li>
+                                        <li>@Html.ActionLink("All payment", "index", "payments")</li>
                                     </ul>
                                 </li>
                                 <li>
                                     <a><i class="fa fa-table"></i> Membership Package <span class="fa fa-chevron-down"></span></a>
                                     <ul class="nav child_menu">
-                                        <li>@Html.ActionLink("Add new", "Create", "Package")</li>
-                                        <li>@Html.ActionLink("All package", "Index", "Package")</li>
+                                        <li>@Html.ActionLink("Add new package", "create", "package")</li>
+                                        <li>@Html.ActionLink("All package", "index", "package")</li>
                                     </ul>
                                 </li>
                                 <li>
-                                    <a><i class="fa fa-desktop"></i> Tags <span class="fa fa-chevron-down"></span></a>
+                                    <a><i class="fa fa-desktop"></i> Material (tags)<span class="fa fa-chevron-down"></span></a>
                                     <ul class="nav child_menu">
-                                        <li><a href="general_elements.html">Add new</a></li>
-                                        <li><a href="media_gallery.html">All tags</a></li>
+                                        <li>@Html.ActionLink("Add new material", "create", "taxonomies", new { content_type = "Material" }, null)</li>
+                                        <li>@Html.ActionLink("All material", "index", "taxonomies", new { content_type = "Material" }, null)</li>
                                     </ul>
                                 </li>
                                 <li>
                                     <a><i class="fa fa-desktop"></i> Category <span class="fa fa-chevron-down"></span></a>
                                     <ul class="nav child_menu">
-                                        <li><a href="general_elements.html">Add new</a></li>
-                                        <li><a href="media_gallery.html">All category</a></li>
+                                        <li>@Html.ActionLink("Add new category", "create", "taxonomies", new { content_type = "Category" }, null)</li>
+                                        <li>@Html.ActionLink("All category", "index", "taxonomies", new { content_type = "Category" }, null)</li>
                                     </ul>
                                 </li>
                                 <li>
-                                    <a><i class="fa fa-desktop"></i> Receipe/Tip <span class="fa fa-chevron-down"></span></a>
+                                    <a><i class="fa fa-desktop"></i> Receipe - Tip <span class="fa fa-chevron-down"></span></a>
                                     <ul class="nav child_menu">
-                                        <li><a href="general_elements.html">Add new</a></li>
-                                        <li><a href="media_gallery.html">All receipe/tip</a></li>
+                                        <li>@Html.ActionLink("Add new recipe", "create", "articles", new { content_type = "Recipe" }, null)</li>
+                                        <li>@Html.ActionLink("All recipe", "index", "articles", new { content_type = "Recipe" }, null)</li>
+                                        <li>@Html.ActionLink("Add new tip", "create", "articles", new { content_type = "Tip" }, null)</li>
+                                        <li>@Html.ActionLink("All tip", "index", "articles", new { content_type = "Tip" }, null)</li>
                                     </ul>
                                 </li>
                                 <li>
                                     <a><i class="fa fa-bar-chart-o"></i> Feedback <span class="fa fa-chevron-down"></span></a>
                                     <ul class="nav child_menu">
-                                        <li><a href="chartjs.html">Add new</a></li>
-                                        <li><a href="chartjs2.html">All feedback</a></li>
+                                        <li>@Html.ActionLink("Add new feedback", "create", "feedbacks")</li>
+                                        <li>@Html.ActionLink("All feedback", "index", "feedbacks")</li>
                                     </ul>
                                 </li>
                                 <li>
                                     <a><i class="fa fa-clone"></i>Contest <span class="fa fa-chevron-down"></span></a>
                                     <ul class="nav child_menu">
-                                        <li><a href="fixed_sidebar.html">Add new</a></li>
-                                        <li><a href="fixed_footer.html">All contest</a></li>
+                                        <li>@Html.ActionLink("Add new contest", "create", "taxonomies", new { content_type = "Contest" }, null)</li>
+                                        <li>@Html.ActionLink("All contest", "index", "taxonomies", new { content_type = "Contest" }, null)</li>
                                     </ul>
                                 </li>
                                 <li>
                                     <a><i class="fa fa-clone"></i>Announcement <span class="fa fa-chevron-down"></span></a>
                                     <ul class="nav child_menu">
-                                        <li><a href="fixed_sidebar.html">Add new</a></li>
-                                        <li><a href="fixed_footer.html">All announcement</a></li>
+                                        <li>@Html.ActionLink("Add new announcement", "create", "articles", new { content_type = "Announcement" }, null)</li>
+                                        <li>@Html.ActionLink("All announcement", "index", "articles", new { content_type = "Announcement" }, null)</li>
                                     </ul>
                                 </li>
                                 <li>
                                     <a><i class="fa fa-clone"></i>FAQ <span class="fa fa-chevron-down"></span></a>
                                     <ul class="nav child_menu">
-                                        <li><a href="fixed_sidebar.html">Add new</a></li>
-                                        <li><a href="fixed_footer.html">All FAQ</a></li>
+                                        <li>@Html.ActionLink("Add new faq", "create", "articles", new { content_type = "FAQ" }, null)</li>
+                                        <li>@Html.ActionLink("All faq", "index", "articles", new { content_type = "FAQ" }, null)</li>
                                     </ul>
                                 </li>
                             </ul>

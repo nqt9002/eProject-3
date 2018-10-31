@@ -1,4 +1,4 @@
-﻿@model IEnumerable<eProject3_Jamesthew.Models.taxonomy>
+﻿@model IEnumerable<eProject3_Jamesthew.Models.taxonomy_m2m>
 
 @{
     ViewBag.Title = "Index";
@@ -8,7 +8,7 @@
     Layout = "~/Views/Shared/_AdminLayoutPage.cshtml";
 }
 
-<h2>@ViewBag._index_content_type</h2>
+<h2>Index</h2>
 
 <p>
     @Html.ActionLink("Create New", "Create")
@@ -16,19 +16,13 @@
 <table class="table">
     <tr>
         <th>
+            @Html.DisplayNameFor(model => model.article.title)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.taxonomy.title)
+        </th>
+        <th>
             @Html.DisplayNameFor(model => model.user.username)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.title)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.body)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.excerpt)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.content_type)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.created_at)
@@ -40,19 +34,13 @@
     {
         <tr>
             <td>
+                @Html.DisplayFor(modelItem => item.article.title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.taxonomy.title)
+            </td>
+            <td>
                 @Html.DisplayFor(modelItem => item.user.username)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.title)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.body)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.excerpt)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.content_type)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.created_at)

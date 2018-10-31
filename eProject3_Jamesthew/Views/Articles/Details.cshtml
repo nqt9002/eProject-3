@@ -4,71 +4,80 @@
     ViewBag.Title = "Details";
 }
 
-<h2>Details</h2>
+@{
+    Layout = "~/Views/Shared/_AdminLayoutPage.cshtml";
+}
 
-<div>
-    <h4>article</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.user.username)
-        </dt>
+<div class="type-@Model.content_type">
+    <h2>Details</h2>
 
-        <dd>
-            @Html.DisplayFor(model => model.user.username)
-        </dd>
+    <div>
+        <h4>article @Model.isPremium()</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.user.username)
+            </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.title)
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.user.username)
+            </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.title)
-        </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.title)
+            </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.body)
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.title)
+            </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.body)
-        </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.body)
+            </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.excerpt)
-        </dt>
+            <dd>
+                @*@Html.DisplayFor(model => model.body)*@
+                @Html.EditorFor(model => model.body, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly", @rows = "20" } })
+            </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.excerpt)
-        </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.excerpt)
+            </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.content_type)
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.excerpt)
+            </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.content_type)
-        </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.content_type)
+            </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.published_at)
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.content_type)
+            </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.published_at)
-        </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.published_at)
+            </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.created_at)
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.published_at)
+            </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.created_at)
-        </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.created_at)
+            </dt>
 
-    </dl>
+            <dd>
+                @Html.DisplayFor(model => model.created_at)
+            </dd>
+
+        </dl>
+    </div>
+
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.id }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.id }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>

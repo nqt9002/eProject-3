@@ -4,13 +4,17 @@
     ViewBag.Title = "Edit";
 }
 
+@{
+    Layout = "~/Views/Shared/_AdminLayoutPage.cshtml";
+}
+
 <h2>Edit</h2>
 
 
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    
+
     <div class="form-horizontal">
         <h4>feedback</h4>
         <hr />

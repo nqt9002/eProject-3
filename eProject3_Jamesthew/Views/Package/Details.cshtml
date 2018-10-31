@@ -1,4 +1,4 @@
-﻿@model eProject3_Jamesthew.Models.payment
+﻿@model eProject3_Jamesthew.Models.package
 
 @{
     ViewBag.Title = "Details";
@@ -11,17 +11,9 @@
 <h2>Details</h2>
 
 <div>
-    <h4>payment</h4>
+    <h4>package</h4>
     <hr />
     <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.package.title)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.package.title)
-        </dd>
-
         <dt>
             @Html.DisplayNameFor(model => model.user.username)
         </dt>
@@ -39,27 +31,35 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.card_number)
+            @Html.DisplayNameFor(model => model.body)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.card_number)
+            @Html.DisplayFor(model => model.body)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.card_expirydate)
+            @Html.DisplayNameFor(model => model.price)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.card_expirydate)
+            @Html.DisplayFor(model => model.price)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.csc)
+            @Html.DisplayNameFor(model => model.expirydate)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.csc)
+            @Html.DisplayFor(model => model.expirydate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.is_public)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.is_public)
         </dd>
 
         <dt>

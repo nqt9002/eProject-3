@@ -1,4 +1,4 @@
-﻿@model eProject3_Jamesthew.Models.feedback
+﻿@model eProject3_Jamesthew.Models.taxonomy_m2m
 
 @{
     ViewBag.Title = "Details";
@@ -11,7 +11,7 @@
 <h2>Details</h2>
 
 <div>
-    <h4>feedback</h4>
+    <h4>taxonomy_m2m</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
@@ -23,19 +23,19 @@
         </dd>
 
         <dt>
+            @Html.DisplayNameFor(model => model.taxonomy.title)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.taxonomy.title)
+        </dd>
+
+        <dt>
             @Html.DisplayNameFor(model => model.user.username)
         </dt>
 
         <dd>
             @Html.DisplayFor(model => model.user.username)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.body)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.body)
         </dd>
 
         <dt>
