@@ -14,6 +14,7 @@ namespace eProject3_Jamesthew.Models
         public int article_id { get; set; }
 
         [Required]
+        [Display(Name ="Description")]
         public string body { get; set; }
 
         public int created_by { get; set; }

@@ -20,12 +20,15 @@ namespace eProject3_Jamesthew.Models
         public int id { get; set; }
 
         [Required]
+        [Display(Name = "Title")]
         public string title { get; set; }
 
         [Required]
+        [Display(Name = "Description")]
         public string body { get; set; }
 
         [Required]
+        [Display(Name = "Excerpt")]
         public string excerpt { get; set; }
 
         [Required]

@@ -1,0 +1,63 @@
+﻿@model IEnumerable<eProject3_Jamesthew.Models.taxonomy>
+
+@{
+    Layout = "~/Views/Shared/_PostLayoutPage.cshtml";
+}
+
+@ViewBag._img_data
+
+<div class="breadcumb-area bg-img bg-overlay" style="background-image: url(@Url.Content("~/images/bg-img/breadcumb2.jpg"));">
+    <div class="container h-100">
+        <div class="row h-100 align-items-center">
+            <div class="col-12">
+                <div class="breadcumb-text text-center">
+                    <h2>@ViewBag._index_data_type</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- ##### Breadcumb Area End ##### -->
+<!-- ##### Blog Area Start ##### -->
+<div class="blog-area section-padding-80">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-lg-8">
+                <div class="blog-posts-area">
+                    @foreach (var item in Model)
+                    {
+                        <!-- Single Blog Area -->
+                        <div class="single-blog-area mb-80">
+                            <!-- Thumbnail -->
+                            <div class="blog-thumbnail">
+                                <img src="@Url.Content("~/images/blog-img/1.jpg")" alt="">
+                                <!-- Post Date -->
+                                <div class="post-date">
+                                    @Html.DisplayFor(modelItem => item.created_at)
+                                </div>
+                            </div>
+                            <!-- Content -->
+                            <div class="blog-content">
+                                @Html.ActionLink(item.title, "Details", new { id = item.id })
+                                <div class="meta-data">
+                                    by @Html.DisplayFor(modelItem => item.created_by)
+                                </div>
+                                <p>@Html.DisplayFor(modelItem => item.excerpt)</p>
+
+                            </div>
+                        </div>
+                    }
+
+                </div>
+
+                <nav aria-label="Page navigation example">
+                    <ul class="pagination">
+                        <li class="page-item active"><a class="page-link" href="#">01.</a></li>
+                        <li class="page-item"><a class="page-link" href="#">02.</a></li>
+                        <li class="page-item"><a class="page-link" href="#">03.</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+</div>

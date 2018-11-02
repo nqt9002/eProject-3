@@ -70,8 +70,16 @@ namespace eProject3_Jamesthew.Models
 
         public string getMeta(string key)
         {
-            return this.metaData()[key];
+            try
+            {
+                return this.metaData()[key];
+            } catch(Exception)
+            {
+                return "";
+            }
+            
         }
+
 
         public void setMeta(string key, string value)
         {

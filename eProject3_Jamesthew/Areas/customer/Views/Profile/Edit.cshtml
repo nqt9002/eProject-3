@@ -1,0 +1,50 @@
+﻿@model eProject3_Jamesthew.Models.user
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+@{
+    Layout = "~/Views/Shared/_PostLayoutPage.cshtml";
+}
+
+
+<h2>Change your password</h2>
+
+@using (Html.BeginForm())
+{
+
+    @Html.AntiForgeryToken()
+
+    <div class="receipe-content-area">
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.id)
+
+        <div class="row col-12 col-md-8">
+            @Html.LabelFor(model => model._password, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model._password, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model._password, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        @Html.HiddenFor(model => model.username)
+        @Html.HiddenFor(model => model.email)
+        @Html.HiddenFor(model => model.package_expirydate)
+        @Html.HiddenFor(model => model.is_admin)
+        @Html.HiddenFor(model => model.is_active)
+        @Html.HiddenFor(model => model.created_at)
+
+        <div class="row col-12 col-md-8">
+            <div class="col-md-10">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+    <br />
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

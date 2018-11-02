@@ -1,0 +1,258 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <!-- Title -->
+    <title>Jamesthew.Com | Home</title>
+
+    <!-- Favicon -->
+    <link rel="icon" href="@Url.Content("~/images/core-img/favicon.ico")">
+    <!-- Core Stylesheet -->
+    @Styles.Render("~/Content/style")
+
+</head>
+
+<body>
+    <!-- Preloader -->
+    <div id="preloader">
+        <i class="circle-preloader"></i>
+        <img src="@Url.Content("~/images/core-img/salad.png")" alt="">
+    </div>
+
+    <!-- Search Wrapper -->
+    <div class="search-wrapper">
+        <!-- Close Btn -->
+        <div class="close-btn"><i class="fa fa-times" aria-hidden="true"></i></div>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <form action="#" method="post">
+                        <input type="search" name="search" placeholder="Type any keywords...">
+                        <button type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ##### Header Area Start ##### -->
+    <header class="header-area">
+
+        <!-- Top Header Area -->
+        <div class="top-header-area">
+            <div class="container h-100">
+                <div class="row h-100 align-items-center justify-content-between">
+                    <!-- Breaking News -->
+                    <div class="col-12 col-sm-6">
+                        <div class="breaking-news">
+                            <div id="breakingNewsTicker" class="ticker">
+                                <ul>
+                                    <li><a href="#">Welcome to JamesThew</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Top Social Info -->
+                    <div class="col-12 col-sm-6">
+                        <div class="top-social-info text-right">
+                            <a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a>
+                            <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                            <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                            <a href="#"><i class="fa fa-dribbble" aria-hidden="true"></i></a>
+                            <a href="#"><i class="fa fa-behance" aria-hidden="true"></i></a>
+                            <a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Navbar Area -->
+        <div class="delicious-main-menu">
+            <div class="classy-nav-container breakpoint-off">
+                <div class="container">
+                    <!-- Menu -->
+                    <nav class="classy-navbar justify-content-between" id="deliciousNav">
+
+                        <!-- Logo -->
+                        <a class="nav-brand" href="#">JamesThew.Com</a>
+
+                        <!-- Navbar Toggler -->
+                        <div class="classy-navbar-toggler">
+                            <span class="navbarToggler"><span></span><span></span><span></span></span>
+                        </div>
+
+                        <!-- Menu -->
+                        <div class="classy-menu">
+
+                            <!-- close btn -->
+                            <div class="classycloseIcon">
+                                <div class="cross-wrap"><span class="top"></span><span class="bottom"></span></div>
+                            </div>
+
+                            <!-- Nav Start -->
+                            <div class="classynav">
+                                <ul>
+                                    <li class="active">@Html.ActionLink("Home", "Index", "Home", new { area = "" }, null)</li>
+                                    <li>@Html.RouteLink("Recipes", new { controller = "Content", action = "Index", type = "Recipe" })</li>
+                                    <li>@Html.RouteLink("Tips", new { controller = "Content", action = "Index", type = "Tip" })</li>
+                                    <li>@Html.ActionLink("Contest", "Contest", "Content", new { type = "Contest" }, null)</li>
+                                    <li>@Html.ActionLink("Announcement", "Index", "Content", new { type = "Announcement" }, null)</li>
+                                    <li>@Html.ActionLink("FAQ'S", "Index", "Content", new { type = "FAQ" }, null)</li>
+                                    @if (Request.IsAuthenticated)
+                                    {
+                                        <li>
+                                            <a href="#">@Html.Encode(User.Identity.Name)</a>
+                                            <ul class="dropdown">
+                                                <li>@Html.ActionLink("Profile", "Details", "customer", new { type = User.Identity.Name }, null)</li>
+                                                <li>@Html.ActionLink("Manage Post", "PostList", "customer", new { type = User.Identity.Name }, null)</li>
+                                                <li>@Html.ActionLink("Sign Out", "Logout", "Login", new { area = "" }, null)</li>
+                                            </ul>
+                                        </li>
+                                    }
+                                    else
+                                    {
+                                        <li>@Html.ActionLink("Login", "Index", "Login")</li>
+                                    }
+                                </ul>
+
+                                <!-- Newsletter Form -->
+                                <div class="search-btn">
+                                    <i class="fa fa-search" aria-hidden="true"></i>
+                                </div>
+
+                            </div>
+                            <!-- Nav End -->
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- ##### Breadcumb Area Start ##### -->
+    @RenderBody()
+    <!-- ##### Blog Area End ##### -->
+    <!-- ##### Follow Us Instagram Area Start ##### -->
+    <div class="follow-us-instagram">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h5>Follow Us Instragram</h5>
+                </div>
+            </div>
+        </div>
+        <!-- Instagram Feeds -->
+        <div class="insta-feeds d-flex flex-wrap">
+            <!-- Single Insta Feeds -->
+            <div class="single-insta-feeds">
+                <img src="images/bg-img/insta1.jpg" alt="">
+                <!-- Icon -->
+                <div class="insta-icon">
+                    <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                </div>
+            </div>
+
+            <!-- Single Insta Feeds -->
+            <div class="single-insta-feeds">
+                <img src="@Url.Content("~/images/bg-img/insta2.jpg")" alt="">
+                <!-- Icon -->
+                <div class="insta-icon">
+                    <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                </div>
+            </div>
+
+            <!-- Single Insta Feeds -->
+            <div class="single-insta-feeds">
+                <img src="@Url.Content("~/images/bg-img/insta3.jpg")" alt="">
+                <!-- Icon -->
+                <div class="insta-icon">
+                    <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                </div>
+            </div>
+
+            <!-- Single Insta Feeds -->
+            <div class="single-insta-feeds">
+                <img src="@Url.Content("~/images/bg-img/insta4.jpg")" alt="">
+                <!-- Icon -->
+                <div class="insta-icon">
+                    <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                </div>
+            </div>
+
+            <!-- Single Insta Feeds -->
+            <div class="single-insta-feeds">
+                <img src="@Url.Content("~/images/bg-img/insta5.jpg")" alt="">
+                <!-- Icon -->
+                <div class="insta-icon">
+                    <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                </div>
+            </div>
+
+            <!-- Single Insta Feeds -->
+            <div class="single-insta-feeds">
+                <img src="@Url.Content("~/images/bg-img/insta6.jpg")" alt="">
+                <!-- Icon -->
+                <div class="insta-icon">
+                    <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                </div>
+            </div>
+
+            <!-- Single Insta Feeds -->
+            <div class="single-insta-feeds">
+                <img src="@Url.Content("~/images/bg-img/insta7.jpg")" alt="">
+                <!-- Icon -->
+                <div class="insta-icon">
+                    <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ##### Follow Us Instagram Area End ##### -->
+    <!-- ##### Footer Area Start ##### -->
+    <footer class="footer-area">
+        <div class="container h-100">
+            <div class="row h-100">
+                <div class="col-12 h-100 d-flex flex-wrap align-items-center justify-content-between">
+                    <!-- Footer Social Info -->
+                    <div class="footer-social-info text-right">
+                        <a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a>
+                        <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                        <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                        <a href="#"><i class="fa fa-dribbble" aria-hidden="true"></i></a>
+                        <a href="#"><i class="fa fa-behance" aria-hidden="true"></i></a>
+                        <a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+                    </div>
+                    <!-- Footer Logo -->
+                    <div class="footer-logo">
+                        Copyright &copy;
+                        <script>document.write(new Date().getFullYear());</script> JamesThew all rights reserved
+                    </div>
+                    <!-- Copywrite -->
+                    <p>
+                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                        This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="#" target="_blank">Colorlib</a>
+                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- ##### Footer Area Start ##### -->
+    <!-- ##### All Javascript Files ##### -->
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/popper")
+    @Scripts.Render("~/bundles/plugin")
+    @Scripts.Render("~/bundles/active")
+    @RenderSection("scripts", required: false)
+</body>
+
+</html>

@@ -21,15 +21,15 @@ namespace eProject3_Jamesthew
             );
 
             routes.MapRoute(
-                name: "Admin_Content_Type",
-                url: "admincp/{controller}/{action}/{id}",
-                defaults: new { controller = "Admin", action = "Index", content_type = UrlParameter.Optional }
+                name: "Taxonomy",
+                url: "Taxonomy/{action}/{type}||{id}",
+                defaults: new { controller = "Taxonomy", action = "Index", type = "", id = ""}
             );
 
             routes.MapRoute(
-                name: "Admin",
-                url: "admincp/{controller}/{action}/{id}",
-                defaults: new { controller = "Admin", action = "Index", id = UrlParameter.Optional}
+                name: "Content",
+                url: "Content/Data/{action}/{type}",
+                defaults: new { controller = "Content", action = "Index", type = "" }
             );
 
             routes.MapRoute(

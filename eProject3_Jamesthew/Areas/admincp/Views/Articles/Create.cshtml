@@ -1,0 +1,96 @@
+﻿@model eProject3_Jamesthew.Models.article
+
+@{
+    ViewBag.Title = "Create";
+}
+
+@{
+    Layout = "~/Views/Shared/_AdminLayoutPage.cshtml";
+}
+
+<h2>Create</h2>
+
+
+@using (Html.BeginForm("Create", "Articles", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+
+<div class="form-horizontal">
+    <h4>@ViewBag._content_type</h4>
+    <div>@Html.ValidationSummary()</div>
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    <div class="form-group">
+        @Html.LabelFor(model => model.title, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.title, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.title, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.body, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.body, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.body, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.excerpt, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.excerpt, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.excerpt, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    @Html.TextBoxFor(model => model.content_type, new { style = "display:none" })
+
+
+    @if (@ViewBag._content_type == "Recipe" || @ViewBag._content_type == "Tip")
+    {
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.taxonomies, "Category", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.ListBox("_taxonomies_category", ViewBag._taxonomies_category as MultiSelectList, new { @class = "chosen-select form-control" })
+                @Html.ValidationMessageFor(model => model.taxonomies, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.taxonomies, "Tags", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.ListBox("_taxonomies", ViewBag._taxonomies as MultiSelectList, new { @class = "chosen-select form-control" })
+                @Html.ValidationMessageFor(model => model.taxonomies, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.Label("Is Premium", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.CheckBox("_premium", false, htmlAttributes: new { @class = "checkbox" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.Label("Image", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextBox("ImageFile", null, new { type = "file" })<br />
+                @Html.ValidationMessageFor(model => model.article_meta)
+            </div>
+        </div>
+    }
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Create" class="btn btn-default" />
+        </div>
+    </div>
+</div>
+}
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

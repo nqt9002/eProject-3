@@ -187,3 +187,4 @@ C:\inetpub\wwwroot\eProject3_Jamesthew\eProject3_Jamesthew\obj\Debug\eProject3_J
 C:\inetpub\wwwroot\eProject3_Jamesthew\eProject3_Jamesthew\obj\Debug\eProject3_Jamesthew.csproj.CopyComplete
 C:\inetpub\wwwroot\eProject3_Jamesthew\eProject3_Jamesthew\obj\Debug\eProject3_Jamesthew.dll
 C:\inetpub\wwwroot\eProject3_Jamesthew\eProject3_Jamesthew\obj\Debug\eProject3_Jamesthew.pdb
+C:\inetpub\wwwroot\eProject3_Jamesthew\eProject3_Jamesthew\obj\Debug\eProject3_Jamesthew.csprojAssemblyReference.cache

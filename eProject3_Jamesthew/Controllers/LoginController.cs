@@ -8,8 +8,9 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Security;
 using eProject3_Jamesthew.Models;
+using eProject3_Jamesthew.Controllers;
 
-namespace eProject3_Jamesthew.Controllers
+namespace eProject3_Jamesthew.Areas.admincp.Controllers
 {
     public class LoginController : Controller
     {
@@ -48,13 +49,18 @@ namespace eProject3_Jamesthew.Controllers
             RoleController role = new RoleController();
             bool is_Admin = role.GetUserAdmin(user.username);
             bool is_Active = role.GetUserActive(user.username);
+            bool get_ExDate = role.GetExDate(user.username);
             if (is_Admin == true && is_Active == true)
             {
-                return RedirectToAction("Index", "Admin");
+                return RedirectToAction("Index", "admincp");
             }
-            else if (is_Admin == false && is_Active == true)
+            else if (is_Admin == false && is_Active == true && get_ExDate == true)
             {
                 return RedirectToAction("Index", "Home");
+            }
+            else if(is_Admin == false && is_Active == true && get_ExDate == false)
+            {
+                return RedirectToAction("Create", "VIP");
             }
             else
             {

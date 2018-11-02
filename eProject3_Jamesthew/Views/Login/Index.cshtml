@@ -4,7 +4,9 @@
     ViewBag.Title = "Login";
 }
 
-<h2>Login</h2>
+@{
+    Layout = "~/Views/Shared/_PostLayoutPage.cshtml";
+}
 
 @using (Html.BeginForm())
 {
@@ -35,6 +37,7 @@
                 <input type="submit" value="Login" class="btn btn-default" />
                 <input type="reset" value="Reset" class="btn btn-default" />
             </div>
+            <div class="col-md-offset-2 col-md-10">@Html.ActionLink("Create new account?","Create", "Register")</div>
         </div>
     </div>
     <h3 color:red>@ViewBag.Error</h3>

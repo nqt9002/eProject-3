@@ -11,16 +11,25 @@ namespace eProject3_Jamesthew.Models
     {
         public int id { get; set; }
 
+        [Display(Name = "VIP Package")]
         public int package_id { get; set; }
 
         [Required]
+        [Display(Name = "Card holder")]
         public string title { get; set; }
 
+        [Display(Name = "Card number")]
+        [DataType(DataType.CreditCard)]
         public int card_number { get; set; }
 
+        [Required]
+        [Display(Name = "Expiration Date")]
+        [DataType(DataType.Date)]
         [Column(TypeName = "date")]
         public DateTime card_expirydate { get; set; }
 
+        [Required]
+        [Display(Name = "CSC")]
         public int csc { get; set; }
 
         public int created_by { get; set; }

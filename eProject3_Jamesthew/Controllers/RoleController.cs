@@ -42,5 +42,23 @@ namespace eProject3_Jamesthew.Controllers
             }
         }
 
+        public bool GetExDate(string username)
+        {
+            var user = db.users.FirstOrDefault(u => u.username == username);
+            if(user == null)
+            {
+                return false;
+            }
+            else
+            {
+                if (GetUserAdmin(username))
+                {
+                    return true;
+                }
+                bool ex =  (DateTime.Compare(user.package_expirydate.Value, DateTime.Now) > 0);
+                return ex;
+            }
+        }
+
     }
 }

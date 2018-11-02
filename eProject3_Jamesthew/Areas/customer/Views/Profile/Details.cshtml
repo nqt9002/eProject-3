@@ -1,0 +1,47 @@
+﻿@model eProject3_Jamesthew.Models.user
+
+@{
+    ViewBag.Title = "Details";
+}
+
+
+@{
+    Layout = "~/Views/Shared/_PostLayoutPage.cshtml";
+}
+
+<h2>User Profile</h2>
+
+<div class="receipe-content-area">
+    <div class="row col-12 col-md-8">
+        @Html.LabelFor(model => model.username, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.DisplayFor(model => model.username)
+        </div>
+    </div>
+
+    <div class="row col-12 col-md-8">
+        @Html.LabelFor(model => model.email, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.DisplayFor(model => model.email)
+        </div>
+    </div>
+
+    <div class="row col-12 col-md-8">
+        @Html.LabelFor(model => model.package_expirydate, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.DisplayFor(model => model.package_expirydate)
+        </div>
+    </div>
+
+    @Html.HiddenFor(model => model.is_admin)
+    @Html.HiddenFor(model => model._password)
+    @Html.HiddenFor(model => model.is_active)
+    @Html.HiddenFor(model => model.created_at)
+
+    <div class="row col-12 col-md-8">
+        <div class="col-md-10">
+            @Html.ActionLink("Change Password", "Edit", new { id = Model.id })
+        </div>
+    </div>
+    <br />
+</div>

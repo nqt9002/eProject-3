@@ -27,6 +27,15 @@ namespace eProject3_Jamesthew
             bundles.Add(new ScriptBundle("~/bundles/custom").Include(
                       "~/Scripts/custom.min.js"));
 
+            bundles.Add(new ScriptBundle("~/bundles/popper").Include(
+                        "~/Scripts/Home/bootstrap/popper.min.js"));
+
+            bundles.Add(new ScriptBundle("~/bundles/plugin").Include(
+                        "~/Scripts/Home/plugins/plugins.js"));
+
+            bundles.Add(new ScriptBundle("~/bundles/active").Include(
+                        "~/Scripts/Home/active.js"));
+
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
                       "~/Content/site.css"));
@@ -36,9 +45,19 @@ namespace eProject3_Jamesthew
 
             bundles.Add(new StyleBundle("~/Content/font").Include(
                       "~/Content/Custom/font-awesome.min.css"));
+
             bundles.Add(new StyleBundle("~/Content/cscss").Include(
                       "~/Content/Custom/custom.min.css"));
 
+            bundles.Add(new StyleBundle("~/Content/style").Include(
+                    "~/Content/Home/style.css",
+                    "~/Content/Home/css/bootstrap.min.css",
+                    "~/Content/Home/css/animate.css",
+                    "~/Content/Home/css/magnific-popup.css",
+                    "~/Content/Home/css/font-awesome.min.css",
+                    "~/Content/Home/css/custom-icon.css",
+                    "~/Content/Home/css/classy-nav.min.css",
+                    "~/Content/Home/css/nice-select.min.css"));
         }
     }
 }

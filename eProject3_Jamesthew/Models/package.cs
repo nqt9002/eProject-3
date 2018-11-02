@@ -18,19 +18,27 @@ namespace eProject3_Jamesthew.Models
         public int id { get; set; }
 
         [Required]
+        [Display(Name ="Title")]
         public string title { get; set; }
 
         [Required]
+        [Display(Name ="Description")]
         public string body { get; set; }
 
+        [Display(Name ="Price")]
         public int price { get; set; }
 
+        [Required]
+        [Display(Name ="Expriry date")]
         public int expirydate { get; set; }
 
+        [Display(Name ="Is public")]
         public bool is_public { get; set; }
 
+        [Display(Name = "Create by")]
         public int created_by { get; set; }
 
+        [Display(Name = "Create at")]
         [Column(TypeName = "date")]
         public DateTime created_at { get; set; }
 

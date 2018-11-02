@@ -46,41 +46,41 @@
                                   </ul>
                                 </li>-->
                                 <li>
-                                    <a><i class="fa fa-edit"></i> Users <span class="fa fa-chevron-down"></span></a>
+                                    <a><i class="fa fa-user"></i> Users <span class="fa fa-chevron-down"></span></a>
                                     <ul class="nav child_menu">
                                         <li>@Html.ActionLink("Add new users", "create", "user")</li>
                                         <li>@Html.ActionLink("All users", "index", "user")</li>
                                     </ul>
                                 </li>
                                 <li>
-                                    <a><i class="fa fa-table"></i> Payment <span class="fa fa-chevron-down"></span></a>
+                                    <a><i class="fa fa-usd"></i> Payment <span class="fa fa-chevron-down"></span></a>
                                     <ul class="nav child_menu">
                                         <li>@Html.ActionLink("All payment", "index", "payments")</li>
                                     </ul>
                                 </li>
                                 <li>
-                                    <a><i class="fa fa-table"></i> Membership Package <span class="fa fa-chevron-down"></span></a>
+                                    <a><i class="fa fa-group"></i> Membership Package <span class="fa fa-chevron-down"></span></a>
                                     <ul class="nav child_menu">
                                         <li>@Html.ActionLink("Add new package", "create", "package")</li>
                                         <li>@Html.ActionLink("All package", "index", "package")</li>
                                     </ul>
                                 </li>
                                 <li>
-                                    <a><i class="fa fa-desktop"></i> Material (tags)<span class="fa fa-chevron-down"></span></a>
+                                    <a><i class="fa fa-tags"></i> Material (tags)<span class="fa fa-chevron-down"></span></a>
                                     <ul class="nav child_menu">
                                         <li>@Html.ActionLink("Add new material", "create", "taxonomies", new { content_type = "Material" }, null)</li>
                                         <li>@Html.ActionLink("All material", "index", "taxonomies", new { content_type = "Material" }, null)</li>
                                     </ul>
                                 </li>
                                 <li>
-                                    <a><i class="fa fa-desktop"></i> Category <span class="fa fa-chevron-down"></span></a>
+                                    <a><i class="fa fa-th"></i> Category <span class="fa fa-chevron-down"></span></a>
                                     <ul class="nav child_menu">
                                         <li>@Html.ActionLink("Add new category", "create", "taxonomies", new { content_type = "Category" }, null)</li>
                                         <li>@Html.ActionLink("All category", "index", "taxonomies", new { content_type = "Category" }, null)</li>
                                     </ul>
                                 </li>
                                 <li>
-                                    <a><i class="fa fa-desktop"></i> Receipe - Tip <span class="fa fa-chevron-down"></span></a>
+                                    <a><i class="fa fa-tasks"></i> Receipe - Tip <span class="fa fa-chevron-down"></span></a>
                                     <ul class="nav child_menu">
                                         <li>@Html.ActionLink("Add new recipe", "create", "articles", new { content_type = "Recipe" }, null)</li>
                                         <li>@Html.ActionLink("All recipe", "index", "articles", new { content_type = "Recipe" }, null)</li>
@@ -89,28 +89,28 @@
                                     </ul>
                                 </li>
                                 <li>
-                                    <a><i class="fa fa-bar-chart-o"></i> Feedback <span class="fa fa-chevron-down"></span></a>
+                                    <a><i class="fa fa-send"></i> Feedback <span class="fa fa-chevron-down"></span></a>
                                     <ul class="nav child_menu">
                                         <li>@Html.ActionLink("Add new feedback", "create", "feedbacks")</li>
                                         <li>@Html.ActionLink("All feedback", "index", "feedbacks")</li>
                                     </ul>
                                 </li>
                                 <li>
-                                    <a><i class="fa fa-clone"></i>Contest <span class="fa fa-chevron-down"></span></a>
+                                    <a><i class="fa fa-star-o"></i>Contest <span class="fa fa-chevron-down"></span></a>
                                     <ul class="nav child_menu">
                                         <li>@Html.ActionLink("Add new contest", "create", "taxonomies", new { content_type = "Contest" }, null)</li>
                                         <li>@Html.ActionLink("All contest", "index", "taxonomies", new { content_type = "Contest" }, null)</li>
                                     </ul>
                                 </li>
                                 <li>
-                                    <a><i class="fa fa-clone"></i>Announcement <span class="fa fa-chevron-down"></span></a>
+                                    <a><i class="fa fa-envelope"></i>Announcement <span class="fa fa-chevron-down"></span></a>
                                     <ul class="nav child_menu">
                                         <li>@Html.ActionLink("Add new announcement", "create", "articles", new { content_type = "Announcement" }, null)</li>
                                         <li>@Html.ActionLink("All announcement", "index", "articles", new { content_type = "Announcement" }, null)</li>
                                     </ul>
                                 </li>
                                 <li>
-                                    <a><i class="fa fa-clone"></i>FAQ <span class="fa fa-chevron-down"></span></a>
+                                    <a><i class="fa fa-comments"></i>FAQ <span class="fa fa-chevron-down"></span></a>
                                     <ul class="nav child_menu">
                                         <li>@Html.ActionLink("Add new faq", "create", "articles", new { content_type = "FAQ" }, null)</li>
                                         <li>@Html.ActionLink("All faq", "index", "articles", new { content_type = "FAQ" }, null)</li>
@@ -137,7 +137,8 @@
                                 </a>
                                 <ul class="dropdown-menu dropdown-usermenu pull-right">
                                     <li><a href="javascript:;"> Profile</a></li>
-                                    <li>@Html.ActionLink("Sign Out", "Logout", "Login")</li>
+                                    <li>@Html.ActionLink("Sign Out", "Logout", "Login", new { area = "" }, null)</li>
+                                    @*<li>@Html.ActionLink("Sign Out", "Logout", "Login")</li>*@
                                 </ul>
                             </li>
                         </ul>
