@@ -58,6 +58,12 @@ namespace eProject3_Jamesthew
                     "~/Content/Home/css/custom-icon.css",
                     "~/Content/Home/css/classy-nav.min.css",
                     "~/Content/Home/css/nice-select.min.css"));
+            bundles.Add(new StyleBundle("~/Content/Login").Include(
+                    "~/Content/Home/css/bootstrap.min.css",
+                    "~/Content/Home/css/animate.css",
+                    "~/Content/Home/css/font-awesome.min.css",
+                    "~/Content/Home/css/main.css",
+                    "~/Content/Home/css/util.css"));
         }
     }
 }

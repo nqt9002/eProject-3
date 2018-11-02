@@ -48,6 +48,7 @@ namespace eProject3_Jamesthew.Models
                 return new String[] { "Admin" };
             }
             else if(user != null && is_Admin == false && is_Active == true)
+
             {
                 return new string[] { "User" };
             }

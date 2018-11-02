@@ -1,8 +1,4 @@
-﻿@model eProject3_Jamesthew.Models.article
-
-@{
-    ViewBag.Title = "Details";
-}
+﻿@model eProject3_Jamesthew.Models.taxonomy
 
 @{
     Layout = "~/Views/Shared/_PostLayoutPage.cshtml";
@@ -21,7 +17,7 @@
 </div>
 
 <!-- Receipe Slider -->
-@*<div class="container">
+<div class="container">
     <div class="row">
         <div class="col-12">
             <div class="receipe-slider owl-carousel">
@@ -31,7 +27,7 @@
             </div>
         </div>
     </div>
-</div>*@
+</div>
 
 <!-- Receipe Content Area -->
 <div class="receipe-content-area">
@@ -48,7 +44,7 @@
                 </div>
             </div>
 
-            @*<div class="col-12 col-md-4">
+            <div class="col-12 col-md-4">
                 <div class="receipe-ratings text-right my-5">
                     <div class="ratings">
                         <i class="fa fa-star" aria-hidden="true"></i>
@@ -59,7 +55,7 @@
                     </div>
                     <a href="#" class="btn delicious-btn">For Begginers</a>
                 </div>
-            </div>*@
+            </div>
         </div>
 
         <div class="row">
@@ -71,43 +67,7 @@
                 </div>
             </div>
         </div>
-
-        <div class="row">
-            <div class="col-12">
-                <div class="section-heading text-left">
-                    <h3>Comment: </h3>
-                </div>
-            </div>
-        </div>
-
-        @foreach (var item in ViewBag._index_feedback)
-        {
-            <div class="row">
-                <div class="col-12">
-                    <div class="section-heading text-left">
-                        <b>@item.user.username</b>
-                        <hr />
-                        @item.body
-                    </div>
-                </div>
-                <hr />
-            </div>
-        }
-            <div class="row">
-                <div class="col-12">
-                    <div class="contact-form-area">
-                        <form action="#" method="post">
-                            <div class="row">
-                                <div class="delicious-btn mt-30">
-                                    @Html.ActionLink("Post Comments", "FeedBack", "Content", new { type = Model.id }, null)
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
     </div>
-       
 </div>
 
-<section class="section-padding-80-0"></section>
+    <section class="section-padding-80-0"></section>

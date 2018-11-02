@@ -5,67 +5,63 @@
 }
 
 @{
-    Layout = "~/Views/Shared/_PostLayoutPage.cshtml";
+    Layout = "~/Views/Shared/_LoginLayoutPage.cshtml";
 }
 
-<h2>Premium Membership</h2>
+<div class="limiter">
+    <div class="container-login100">
+        <div class="wrap-login100">
+            <form method="post" class="login100-form validate-form p-l-55 p-r-55 p-t-178">
+                @Html.AntiForgeryToken()
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <span class="login100-form-title">
+                    Premium Membership
+                </span>
+
+                <div class="wrap-input100 validate-input m-b-16" data-validate="Please choose your pack">
+                    @Html.DropDownList("package_id", null, htmlAttributes: new { @class = "form-control"})
+                    @Html.ValidationMessageFor(model => model.package_id, "", new { @class = "text-danger" })
+                    <span class="focus-input100"></span>
+                </div>
+
+                <div class="wrap-input100 validate-input m-b-16" data-validate="Please enter card holder">
+                    @Html.EditorFor(model => model.title, new { htmlAttributes = new { @class = "form-control", placeholder = "Card holder" } })
+                    @Html.ValidationMessageFor(model => model.title, "", new { @class = "text-danger" })
+                    <span class="focus-input100"></span>
+                </div>
+
+                <div class="wrap-input100 validate-input m-b-16" data-validate="Please enter card number">
+                    @Html.EditorFor(model => model.card_number, new { htmlAttributes = new { @class = "form-control", placeholder = "Card number" } })
+                    @Html.ValidationMessageFor(model => model.card_number, "", new { @class = "text-danger" })
+                    <span class="focus-input100"></span>
+                </div>
+
+                <div class="wrap-input100 validate-input m-b-16" data-validate="Please enter card expiration dates">
+                    @Html.EditorFor(model => model.card_expirydate, new { htmlAttributes = new { @class = "form-control", placeholder = "Card expiration dates" } })
+                    @Html.ValidationMessageFor(model => model.card_expirydate, "", new { @class = "text-danger" })
+                    <span class="focus-input100"></span>
+                </div>
+
+                <div class="wrap-input100 validate-input m-b-16" data-validate="Please enter CSC">
+                    @Html.EditorFor(model => model.csc, new { htmlAttributes = new { @class = "form-control", placeholder = "CSC" } })
+                    @Html.ValidationMessageFor(model => model.csc, "", new { @class = "text-danger" })
+                    <span class="focus-input100"></span>
+                </div>
 
 
-@using (Html.BeginForm())
-{
-    @Html.AntiForgeryToken()
+                <div class="container-login100-form-btn text-right p-t-13 p-b-23">
+                    <button class="login100-form-btn" type="submit">
+                        Sign up
+                    </button>
+                </div>
 
-    <div class="form-horizontal">
-        <h4>Only premium members can view paid formulas. Please pay to complete registration.</h4>
-        <hr />
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        <div class="form-group">
-            @Html.LabelFor(model => model.package_id, "VIP Package", htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.DropDownList("package_id", null, htmlAttributes: new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.package_id, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.title, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.title, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.title, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.card_number, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.card_number, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.card_number, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.card_expirydate, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.card_expirydate, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.card_expirydate, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.csc, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.csc, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.csc, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default" />
-            </div>
+                <div class="flex-col-c p-t-170 p-b-40">
+                    @Html.ActionLink("Back to home", "Index", "Home", new { area = "" }, new { @class = "txt3" })
+                </div>
+            </form>
         </div>
     </div>
-}
+</div>
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")

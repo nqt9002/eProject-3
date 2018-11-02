@@ -11,10 +11,11 @@ namespace eProject3_Jamesthew.Models
     {
         public int id { get; set; }
 
+        [Display(Name ="Article")]
         public int article_id { get; set; }
 
         [Required]
-        [Display(Name ="Description")]
+        [Display(Name ="Message")]
         public string body { get; set; }
 
         public int created_by { get; set; }

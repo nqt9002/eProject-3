@@ -8,14 +8,24 @@
     Layout = "~/Views/Shared/_PostLayoutPage.cshtml";
 }
 
-<h2>Edit Post</h2>
+<div class="breadcumb-area bg-img bg-overlay" style="background-image: url(@Url.Content("~/images/bg-img/breadcumb2.jpg"));">
+    <div class="container h-100">
+        <div class="row h-100 align-items-center">
+            <div class="col-12">
+                <div class="breadcumb-text text-center">
+                    <h2>Edit Post</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
 
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
 
-<div class="receipe-content-area">
+<div class="receipe-content-area receipe-headline my-5">
     <hr />
     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
     @Html.HiddenFor(model => model.id)

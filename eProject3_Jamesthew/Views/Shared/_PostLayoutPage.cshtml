@@ -100,22 +100,22 @@
                             <!-- Nav Start -->
                             <div class="classynav">
                                 <ul>
-                                    <li class="active">@Html.ActionLink("Home", "Index", "Home", new { area = "" }, null)</li>
-                                    <li>@Html.RouteLink("Recipes", new { controller = "Content", action = "Index", type = "Recipe" })</li>
-                                    <li>@Html.RouteLink("Tips", new { controller = "Content", action = "Index", type = "Tip" })</li>
-                                    <li>@Html.ActionLink("Contest", "Contest", "Content", new { type = "Contest" }, null)</li>
-                                    <li>@Html.ActionLink("Announcement", "Index", "Content", new { type = "Announcement" }, null)</li>
-                                    <li>@Html.ActionLink("FAQ'S", "Index", "Content", new { type = "FAQ" }, null)</li>
+                                    <li class="active">@Html.ActionLink("Home", "Index", "Home", new { area = "" }, new { })</li>
+                                    <li>@Html.RouteLink("Recipes", new { controller = "Content", action = "Index", type = "Recipe", area = "" })</li>
+                                    <li>@Html.RouteLink("Tips", new { controller = "Content", action = "Index", type = "Tip", area = "" })</li>
+                                    <li>@Html.ActionLink("Contest", "Contest", "Content", new { area = "", type = "Contest" }, new { })</li>
+                                    <li>@Html.ActionLink("Announcement", "Index", "Content", new { area = "", type = "Announcement" }, new { })</li>
+                                    <li>@Html.ActionLink("FAQ'S", "Index", "Content", new { area = "", type = "FAQ" }, new { })</li>
                                     @if (Request.IsAuthenticated)
                                     {
-                                        <li>
-                                            <a href="#">@Html.Encode(User.Identity.Name)</a>
-                                            <ul class="dropdown">
-                                                <li>@Html.ActionLink("Profile", "Details", "customer", new { type = User.Identity.Name }, null)</li>
-                                                <li>@Html.ActionLink("Manage Post", "PostList", "customer", new { type = User.Identity.Name }, null)</li>
-                                                <li>@Html.ActionLink("Sign Out", "Logout", "Login", new { area = "" }, null)</li>
-                                            </ul>
-                                        </li>
+                                    <li>
+                                        <a href="#">@Html.Encode(User.Identity.Name)</a>
+                                        <ul class="dropdown">
+                                            <li>@Html.ActionLink("Profile", "UserDetails", "Content", new { area = "", type = User.Identity.Name }, new { })</li>
+                                            <li>@Html.ActionLink("Manage Post", "PostList", "Content", new { area = "", type = User.Identity.Name }, new { })</li>
+                                            <li>@Html.ActionLink("Sign Out", "Logout", "Login", new { area = "" }, new { })</li>
+                                        </ul>
+                                    </li>
                                     }
                                     else
                                     {
@@ -152,7 +152,7 @@
         <div class="insta-feeds d-flex flex-wrap">
             <!-- Single Insta Feeds -->
             <div class="single-insta-feeds">
-                <img src="images/bg-img/insta1.jpg" alt="">
+                <img src="@Url.Content("~/images/bg-img/insta1.jpg")" alt="" />
                 <!-- Icon -->
                 <div class="insta-icon">
                     <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>

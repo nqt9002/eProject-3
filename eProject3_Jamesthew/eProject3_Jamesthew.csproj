@@ -156,8 +156,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Areas\admincp\admincpAreaRegistration.cs" />
-    <Compile Include="Areas\customer\Controllers\ProfileController.cs" />
-    <Compile Include="Areas\customer\customerAreaRegistration.cs" />
+    <Compile Include="Controllers\ProfileController.cs" />
     <Compile Include="Controllers\AccessDenyController.cs" />
     <Compile Include="Areas\admincp\Controllers\AdminController.cs" />
     <Compile Include="Areas\admincp\Controllers\ArticlesController.cs" />
@@ -173,7 +172,6 @@
     <Compile Include="Areas\admincp\Controllers\TaxonomiesController.cs" />
     <Compile Include="Areas\admincp\Controllers\taxonomy_m2mController.cs" />
     <Compile Include="Areas\admincp\Controllers\UserController.cs" />
-    <Compile Include="Controllers\TaxonomyController.cs" />
     <Compile Include="Controllers\VIPController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -207,8 +205,10 @@
     <Content Include="Content\Home\css\custom-icon.css" />
     <Content Include="Content\Home\css\font-awesome.min.css" />
     <Content Include="Content\Home\css\magnific-popup.css" />
+    <Content Include="Content\Home\css\main.css" />
     <Content Include="Content\Home\css\nice-select.min.css" />
     <Content Include="Content\Home\css\owl.carousel.min.css" />
+    <Content Include="Content\Home\css\util.css" />
     <Content Include="Content\Home\style.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\classy.svg" />
@@ -307,17 +307,13 @@
     <Content Include="fonts\icomoon.eot" />
     <Content Include="fonts\icomoon.ttf" />
     <Content Include="fonts\icomoon.woff" />
-    <Content Include="Areas\customer\Views\web.config" />
-    <Content Include="Areas\customer\Views\_ViewStart.cshtml" />
-    <Content Include="Areas\customer\Views\Shared\_Layout.cshtml" />
-    <Content Include="Areas\customer\Views\Profile\Create.cshtml" />
-    <Content Include="Areas\customer\Views\Profile\Delete.cshtml" />
-    <Content Include="Areas\customer\Views\Profile\Details.cshtml" />
-    <Content Include="Areas\customer\Views\Profile\Edit.cshtml" />
-    <Content Include="Areas\customer\Views\Profile\Index.cshtml" />
-    <Content Include="Areas\customer\Views\Profile\PostList.cshtml" />
-    <Content Include="Areas\customer\Views\Profile\EditPost.cshtml" />
-    <Content Include="Areas\customer\Views\Profile\PostProduct.cshtml" />
+    <Content Include="Views\Profile\Create.cshtml" />
+    <Content Include="Views\Profile\Delete.cshtml" />
+    <Content Include="Views\Content\UserDetails.cshtml" />
+    <Content Include="Views\Content\UserEdit.cshtml" />
+    <Content Include="Views\Content\PostList.cshtml" />
+    <Content Include="Views\Content\EditPost.cshtml" />
+    <Content Include="Views\Content\PostProduct.cshtml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\custom.min.js" />
     <Content Include="Scripts\Custom\bootstrap.min.js" />
@@ -395,25 +391,17 @@
     <Content Include="Areas\admincp\Views\Package\Edit.cshtml" />
     <Content Include="Areas\admincp\Views\Package\Index.cshtml" />
     <Content Include="Views\Register\Create.cshtml" />
-    <Content Include="Views\Register\Delete.cshtml" />
-    <Content Include="Views\Register\Details.cshtml" />
-    <Content Include="Views\Register\Edit.cshtml" />
-    <Content Include="Views\Register\Index.cshtml" />
     <Content Include="Views\Home\Admin.cshtml" />
     <Content Include="Views\Shared\_HomeLayoutPage.cshtml" />
     <Content Include="Views\Content\Details.cshtml" />
     <Content Include="Views\Content\Index.cshtml" />
-    <Content Include="Views\Taxonomy\Create.cshtml" />
-    <Content Include="Views\Taxonomy\Delete.cshtml" />
-    <Content Include="Views\Taxonomy\Details.cshtml" />
-    <Content Include="Views\Taxonomy\Edit.cshtml" />
-    <Content Include="Views\Taxonomy\Index.cshtml" />
     <Content Include="Views\Shared\_PostLayoutPage.cshtml" />
     <Content Include="Views\VIP\Create.cshtml" />
     <Content Include="Views\Content\Contest.cshtml" />
     <Content Include="Views\Content\FeedBack.cshtml" />
     <Content Include="Views\Content\Filter.cshtml" />
-    <None Include="Views\VIP\Create.cshtml.k" />
+    <Content Include="Views\Content\ContestDetails.cshtml" />
+    <None Include="Views\Shared\_LoginLayoutPage.cshtml" />
     <Content Include="Views\VIP\Delete.cshtml" />
     <Content Include="Views\VIP\Details.cshtml" />
     <Content Include="Views\VIP\Edit.cshtml" />
@@ -423,7 +411,6 @@
     <Folder Include="App_Data\" />
     <Folder Include="Areas\admincp\Models\" />
     <Folder Include="Areas\admincp\Views\Shared\" />
-    <Folder Include="Areas\customer\Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

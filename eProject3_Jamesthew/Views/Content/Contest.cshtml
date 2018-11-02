@@ -4,8 +4,6 @@
     Layout = "~/Views/Shared/_PostLayoutPage.cshtml";
 }
 
-@ViewBag._img_data
-
 <div class="breadcumb-area bg-img bg-overlay" style="background-image: url(@Url.Content("~/images/bg-img/breadcumb2.jpg"));">
     <div class="container h-100">
         <div class="row h-100 align-items-center">
@@ -38,7 +36,7 @@
                             </div>
                             <!-- Content -->
                             <div class="blog-content">
-                                @Html.ActionLink(item.title, "Details", new { id = item.id })
+                                @Html.ActionLink(item.title, "ContestDetails", new { id = item.id })
                                 <div class="meta-data">
                                     by @Html.DisplayFor(modelItem => item.created_by)
                                 </div>
@@ -50,13 +48,13 @@
 
                 </div>
 
-                <nav aria-label="Page navigation example">
+                @*<nav aria-label="Page navigation example">
                     <ul class="pagination">
                         <li class="page-item active"><a class="page-link" href="#">01.</a></li>
                         <li class="page-item"><a class="page-link" href="#">02.</a></li>
                         <li class="page-item"><a class="page-link" href="#">03.</a></li>
                     </ul>
-                </nav>
+                </nav>*@
             </div>
         </div>
     </div>

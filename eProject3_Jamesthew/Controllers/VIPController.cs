@@ -14,24 +14,6 @@ namespace eProject3_Jamesthew.Controllers
     {
         private Jamesthew_Model db = new Jamesthew_Model();
 
-        // GET: VIP
-
-        // GET: VIP/Details/5
-        [Authorize(Roles = "User")]
-        public ActionResult Details(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            payment payment = db.payments.Find(id);
-            if (payment == null)
-            {
-                return HttpNotFound();
-            }
-            return View(payment);
-        }
-
         // GET: VIP/Create
         [Authorize(Roles = "User")]
         public ActionResult Create()
@@ -64,43 +46,6 @@ namespace eProject3_Jamesthew.Controllers
                 return RedirectToAction("Index", "Home");
             }
 
-            ViewBag.package_id = new SelectList(db.packages, "id", "title", payment.package_id);
-            ViewBag.created_by = new SelectList(db.users, "id", "username", payment.created_by);
-            return View(payment);
-        }
-
-        // GET: VIP/Edit/5
-        [Authorize(Roles = "User")]
-        public ActionResult Edit(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            payment payment = db.payments.Find(id);
-            if (payment == null)
-            {
-                return HttpNotFound();
-            }
-            ViewBag.package_id = new SelectList(db.packages, "id", "title", payment.package_id);
-            ViewBag.created_by = new SelectList(db.users, "id", "username", payment.created_by);
-            return View(payment);
-        }
-
-        // POST: VIP/Edit/5
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [Authorize(Roles = "User")]
-        [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "id,package_id,title,card_number,card_expirydate,csc,created_by,created_at")] payment payment)
-        {
-            if (ModelState.IsValid)
-            {
-                db.Entry(payment).State = EntityState.Modified;
-                db.SaveChanges();
-                return RedirectToAction("Index");
-            }
             ViewBag.package_id = new SelectList(db.packages, "id", "title", payment.package_id);
             ViewBag.created_by = new SelectList(db.users, "id", "username", payment.created_by);
             return View(payment);
